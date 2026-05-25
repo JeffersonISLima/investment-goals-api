@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-export const monthEnum = z.enum(
-  [
+export const monthEnum = z
+  .enum([
     'janeiro',
     'fevereiro',
     'marco',
@@ -14,11 +14,8 @@ export const monthEnum = z.enum(
     'outubro',
     'novembro',
     'dezembro',
-  ],
-  {
-    description: 'Mês do ano',
-  }
-);
+  ])
+  .describe('Mês do ano');
 
 export const createInvestmentGoalBody = z.object({
   name: z.string().min(1, 'nome é obrigatório'),
