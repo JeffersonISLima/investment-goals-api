@@ -15,7 +15,7 @@ model InvestmentGoal {
   createdAt  DateTime @default(now()) @map("created_at") @db.Timestamp(6)
   updatedAt  DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
 
-  @@index([name], map: "idx_investment_goals_name")
-  @@index([months], map: "idx_investment_goals_months_gin", type: Gin)
-  @@map("investment_goals")
+  @@index([name], map: "idx_investment-goals_name")
+  @@index([months], map: "idx_investment-goals_months_gin", type: Gin)
+  @@map("investment-goals")
 }

@@ -28,7 +28,7 @@ export class InvestmentGoalService {
   }
 
   async findAll(
-    filters: ListInvestmentGoalsFilters
+    filters: ListInvestmentGoalsFilters,
   ): Promise<InvestmentGoalResponse[]> {
     const goals = await this.repository.findAll(filters);
     return goals.map((goal) => this.toResponse(goal));
@@ -44,7 +44,7 @@ export class InvestmentGoalService {
 
   async update(
     id: string,
-    changes: UpdateInvestmentGoal
+    changes: UpdateInvestmentGoal,
   ): Promise<InvestmentGoalResponse> {
     if (changes.months && !changes.months.length) {
       throw new Error('Meses, se enviado, deve conter pelo menos um mês');

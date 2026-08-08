@@ -14,7 +14,7 @@ COPY database ./database
 ENV NODE_ENV=production
 
 # Gerar Prisma Client antes do build
-ENV DATABASE_URL="postgres://postgres:postgres@localhost:5432/investment_goals"
+ENV DATABASE_URL="postgres://postgres:postgres@localhost:5432/investment-goals"
 RUN npx prisma generate
 RUN npm run build
 
